@@ -11,6 +11,10 @@ param TIENE_DEM_MAX{i in PRODUCTOS};
 param DEM_MIN{i in PRODUCTOS};
 param TIENE_DEM_MIN{i in PRODUCTOS};
 
+#impresion de max
+var min_precio;
+var car_pro;
+
 #Definicion de variables
 var prods{i in PRODUCTOS} >=0;
 
@@ -24,5 +28,7 @@ s.t. proc{j in EQUIPOS}: sum{i in PRODUCTOS} UTILIZA[j,i]*prods[i]<=DISP[j];
 #demandas
 s.t. max{i in PRODUCTOS}: TIENE_DEM_MAX[i]*prods[i]<=DEM_MAX[i];
 s.t. min{i in PRODUCTOS}: TIENE_DEM_MIN[i]*prods[i]>=DEM_MIN[i];
+s.t. impre_min: min_precio= min{i in PRODUCTOS} VENTA[i];
+s.t. impre_car: car_pro= card(PRODUCTOS);
 
 end;

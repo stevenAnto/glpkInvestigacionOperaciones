@@ -8,6 +8,7 @@ param UTILIZA: A B C:=
 eq1  0.8 0.8 0.3
 eq2  0.6 1.2 0.0
 eq3  0.6 1.0 0.6;
+
 param DISP :=
 eq1 160
 eq2 180
@@ -30,6 +31,6 @@ B 1
 C 0;
 param DEM_MIN :=
 A 0
-B 80
+B 81
 C 0;
 end;
